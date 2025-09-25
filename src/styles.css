@@ -85,7 +85,7 @@ body {
 }
 
 .btn.modelo {
-  grid-column: span 1;
+  grid-column: span 4;
   background-color: #ffffff;
   color: #000000;
 }

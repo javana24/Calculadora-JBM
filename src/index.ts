@@ -4,7 +4,7 @@ let previousInput: string = '';
 
 function appendToDisplay(value: string): void {
     let update = false;
-    if (['+', '-', '*', '/'].includes(value)) {
+    if (['+', '-', '*', '/', '√'].includes(value)) {
         if ((value === '-' && currentInput === '0') && previousInput === '') {
         currentInput = '-';
         updateDisplay();
@@ -74,6 +74,13 @@ function calculate(): void {
                     return;
                 }
                 result = prev / current;
+                break;
+            case '√':
+                if (current < 0) {
+                    alert('Error: No se puede calcular la raíz cuadrada de un número negativo');
+                    return;
+                }
+                result = Math.sqrt(current);
                 break;
             default:
                 return;

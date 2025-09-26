@@ -4,7 +4,7 @@ let previousInput: string = '';
 
 function appendToDisplay(value: string): void {
     let update = false;
-    if (['+', '-', '*', '/', '√'].includes(value)) {
+    if (['+', '-', '*', '/', '√', '^'].includes(value)) {
         if ((value === '-' && currentInput === '0') && previousInput === '') {
         currentInput = '-';
         updateDisplay();
@@ -82,6 +82,14 @@ function calculate(): void {
                 }
                 result = Math.sqrt(current);
                 break;
+            case '^':
+                if (current == 0) {
+                    result = 1;
+                    return;
+                }
+                result = Math.pow(prev, current);
+                break;
+
             default:
                 return;
         }

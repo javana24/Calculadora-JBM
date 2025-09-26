@@ -89,3 +89,7 @@ body {
   background-color: #ffffff;
   color: #000000;
 }
+
+.btn.cientific {
+  height: 30px;
+}
